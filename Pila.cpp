@@ -5,18 +5,18 @@ Pila::Pila(){
     longitud = 0;
 }
 
-void Pila::insertar(int v){
+void Pila::insertar(Paciente* v){
     pnodoPila nuevo;
     nuevo = new NodoPila(v, ultimo);
     ultimo = nuevo;
     longitud++;
 }
 
-int Pila::extraer(){
+Paciente* Pila::extraer(){
     pnodoPila nodo;
-    int v;
+    Paciente* v;
     if(!ultimo)
-        return 0;
+        return NULL;
     nodo = ultimo;
     ultimo = nodo->siguiente;
     v = nodo->valor;
@@ -25,10 +25,9 @@ int Pila::extraer(){
     return v;
 }
 
-int Pila::cima(){
-    pnodoPila nodo;
+Paciente* Pila::cima(){
     if(!ultimo)
-        return 0;
+        return NULL;
     return ultimo->valor;
 }
 

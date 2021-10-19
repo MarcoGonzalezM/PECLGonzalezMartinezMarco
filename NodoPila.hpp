@@ -1,5 +1,6 @@
 #ifndef NODOPILA_HPP
 #define NODOPILA_HPP
+#include "Paciente.hpp"
 
 using namespace std;
 
@@ -8,7 +9,7 @@ class NodoPila{
         NodoPila();
         ~NodoPila();
     private:
-        Persona valor;
+        Paciente valor;
         NodoPila* sig;
         friend class Pila;
 };

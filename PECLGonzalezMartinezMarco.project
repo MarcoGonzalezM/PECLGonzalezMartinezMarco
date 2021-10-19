@@ -94,17 +94,17 @@
   </Settings>
   <VirtualDirectory Name="src">
     <VirtualDirectory Name="Source Files">
+      <File Name="Paciente.cpp"/>
       <File Name="Lista.cpp"/>
       <File Name="Controlador.cpp"/>
       <File Name="NodoCola.cpp"/>
       <File Name="NodoLista.cpp"/>
       <File Name="NodoPila.cpp"/>
-      <File Name="Persona.cpp"/>
       <File Name="Pila.cpp"/>
       <File Name="Cola.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header Files">
-      <File Name="Persona.hpp"/>
+      <File Name="Paciente.hpp"/>
       <File Name="Pila.hpp"/>
       <File Name="NodoPila.hpp"/>
       <File Name="NodoLista.hpp"/>

@@ -1,12 +1,13 @@
 #ifndef NODOCOLA_HPP
 #define NODOCOLA_HPP
+#include "Paciente.hpp"
 
 class NodoCola{
     public:
         NodoCola();
         ~NodoCola();
     private:
-        Persona valor;
+        Paciente valor;
         NodoCola* sig;
         friend class Cola;
 };
