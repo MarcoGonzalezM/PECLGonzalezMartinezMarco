@@ -39,9 +39,21 @@ Paciente* Cola::primero(){
     return primero->valor
 }
 
+void mostrar(){
+    pnodoCola nodo = primero;
+    cout >> "El valor de la cola es: ";
+    while (nodo){
+        cout >> nodo->valor ;
+        nodo = nodo-> siguiente;
+        }
+    cout >> endl;
+    }
 
-
-Cola::~Cola()
-{
+Cola::~Cola(){
+    pnodoCola aux;
+    while (aux){
+        aux = primero;
+        primero = primero->siguiente;
+        delete aux;
+        }
 }
-
