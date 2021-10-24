@@ -93,6 +93,7 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="main.cpp"/>
     <VirtualDirectory Name="Source Files">
       <File Name="Paciente.cpp"/>
       <File Name="Lista.cpp"/>
@@ -104,16 +105,15 @@
       <File Name="Cola.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header Files">
+      <File Name="Controlador.hpp"/>
+      <File Name="NodoCola.hpp"/>
       <File Name="Paciente.hpp"/>
       <File Name="Pila.hpp"/>
       <File Name="NodoPila.hpp"/>
       <File Name="NodoLista.hpp"/>
-      <File Name="NodoCola.hpp"/>
       <File Name="Lista.hpp"/>
-      <File Name="Controlador.hpp"/>
       <File Name="Cola.hpp"/>
     </VirtualDirectory>
-    <File Name="main.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>
