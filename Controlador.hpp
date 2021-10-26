@@ -22,6 +22,8 @@ public:
 	~Controlador();
 
 private:
+    Pila pila1;
+    Cola colaA, colaB, colaC, colaD;
 	
 };
 

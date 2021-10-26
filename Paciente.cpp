@@ -1,10 +1,9 @@
 #include "Paciente.hpp"
 
-Paciente::Paciente(int ID, int habitacion)
-{
-	this->ID = 0;
-	this->habitacion = 0;
-	this->enfermedad = (rand() % 2);
+Paciente::Paciente(){
+	ID = 0;
+	habitacion = 0;
+	enfermedad = (rand() % 2);
 	this->generarDNI();
 }
 
