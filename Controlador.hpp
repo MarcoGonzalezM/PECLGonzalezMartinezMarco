@@ -1,8 +1,5 @@
 #ifndef CONTROLADOR_HPP
 #define CONTROLADOR_HPP
-#include "Cola.hpp"
-//#include "Lista.hpp"
-#include "Pila.hpp"
 
 class Controlador
 {
@@ -11,6 +8,7 @@ public:
 	void genera12Pacientes();
 	void muestraPacientes();
 	void borraPacientesPila();
+	void encolarPacientes();
 	void pacientesEnSalaA();
 	void pacientesEnSalaB();
 	void pacientesEnSalaC();
