@@ -33,20 +33,20 @@ Paciente* Cola::extraer(){
     return v;
 }
 
-Paciente* Cola::primero(){
+Paciente* Cola::cima(){
     if (!primero)
         return NULL;
-    return primero->valor
+    return primero->valor;
 }
 
-void mostrar(){
+void Cola::mostrar(){
     pnodoCola nodo = primero;
-    cout >> "El valor de la cola es: ";
+    cout << "El valor de la cola es: ";
     while (nodo){
-        cout >> nodo->valor ;
-        nodo = nodo-> siguiente;
+        cout << nodo->valor;
+        nodo = nodo->siguiente;
         }
-    cout >> endl;
+    cout << endl;
     }
 
 Cola::~Cola(){

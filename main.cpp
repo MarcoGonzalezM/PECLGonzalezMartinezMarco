@@ -117,7 +117,7 @@ int main(int argc, char** argv){
         case 'S':
             cout << "Saliendo del programa...\n";
             break;
-        default;
+        default:
             cout << "!Opci\242n incorrecta!\n\n";
             break;
     }

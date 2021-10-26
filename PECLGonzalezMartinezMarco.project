@@ -95,23 +95,23 @@
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
     <VirtualDirectory Name="Source Files">
+      <File Name="NodoCola.cpp"/>
       <File Name="Paciente.cpp"/>
       <File Name="Lista.cpp"/>
       <File Name="Controlador.cpp"/>
-      <File Name="NodoCola.cpp"/>
       <File Name="NodoLista.cpp"/>
       <File Name="NodoPila.cpp"/>
       <File Name="Pila.cpp"/>
       <File Name="Cola.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header Files">
+      <File Name="Lista.hpp"/>
       <File Name="Controlador.hpp"/>
       <File Name="NodoCola.hpp"/>
       <File Name="Paciente.hpp"/>
       <File Name="Pila.hpp"/>
       <File Name="NodoPila.hpp"/>
       <File Name="NodoLista.hpp"/>
-      <File Name="Lista.hpp"/>
       <File Name="Cola.hpp"/>
     </VirtualDirectory>
   </VirtualDirectory>

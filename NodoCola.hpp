@@ -4,14 +4,14 @@
 
 class NodoCola{
     public:
-        NodoCola();
+        NodoCola(Paciente* v, NodoCola* sig);
         ~NodoCola();
     private:
-        Paciente valor;
-        NodoCola* sig;
+        Paciente* valor;
+        NodoCola* siguiente;
         friend class Cola;
 };
 
-typedef NodoCola* pnodoCola
+typedef NodoCola* pnodoCola;
 
 #endif // NODOCOLA_HPP

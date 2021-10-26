@@ -14,7 +14,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=marco
-Date                   :=24/10/2021
+Date                   :=26/10/2021
 CodeLitePath           :=C:/CodeLite
 LinkerName             :=C:/TDM-GCC-64/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM-GCC-64/bin/g++.exe -shared -fPIC
@@ -62,7 +62,7 @@ AS       := C:/TDM-GCC-64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\CodeLite
-Objects0=../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix) 
 
 
 
@@ -93,22 +93,6 @@ PreBuild:
 ##
 ## Objects
 ##
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix): Paciente.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Paciente.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Paciente.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix): Paciente.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix) -MM Paciente.cpp
-
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(PreprocessSuffix): Paciente.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(PreprocessSuffix) Paciente.cpp
-
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix): NodoCola.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/NodoCola.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NodoCola.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix): NodoCola.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix) -MM NodoCola.cpp
-
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(PreprocessSuffix): NodoCola.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(PreprocessSuffix) NodoCola.cpp
-
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(ObjectSuffix): Controlador.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Controlador.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Controlador.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(DependSuffix): Controlador.cpp
@@ -117,13 +101,13 @@ PreBuild:
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(PreprocessSuffix): Controlador.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Controlador.cpp$(PreprocessSuffix) Controlador.cpp
 
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix): main.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix) -MM main.cpp
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix): Paciente.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Paciente.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Paciente.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix): Paciente.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(DependSuffix) -MM Paciente.cpp
 
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(PreprocessSuffix) main.cpp
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(PreprocessSuffix): Paciente.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Paciente.cpp$(PreprocessSuffix) Paciente.cpp
 
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(ObjectSuffix): Lista.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Lista.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Lista.cpp$(ObjectSuffix) $(IncludePath)
@@ -133,6 +117,14 @@ PreBuild:
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(PreprocessSuffix): Lista.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Lista.cpp$(PreprocessSuffix) Lista.cpp
 
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix): main.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(DependSuffix) -MM main.cpp
+
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/main.cpp$(PreprocessSuffix) main.cpp
+
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(ObjectSuffix): Pila.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Pila.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Pila.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(DependSuffix): Pila.cpp
@@ -140,6 +132,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(PreprocessSuffix): Pila.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Pila.cpp$(PreprocessSuffix) Pila.cpp
+
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix): NodoCola.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/NodoCola.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NodoCola.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix): NodoCola.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(DependSuffix) -MM NodoCola.cpp
+
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(PreprocessSuffix): NodoCola.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoCola.cpp$(PreprocessSuffix) NodoCola.cpp
 
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(ObjectSuffix): Cola.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/Cola.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Cola.cpp$(ObjectSuffix) $(IncludePath)
@@ -149,14 +149,6 @@ PreBuild:
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(PreprocessSuffix): Cola.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/Cola.cpp$(PreprocessSuffix) Cola.cpp
 
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix): NodoPila.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/NodoPila.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NodoPila.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix): NodoPila.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix) -MM NodoPila.cpp
-
-../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(PreprocessSuffix): NodoPila.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(PreprocessSuffix) NodoPila.cpp
-
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(ObjectSuffix): NodoLista.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/NodoLista.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NodoLista.cpp$(ObjectSuffix) $(IncludePath)
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(DependSuffix): NodoLista.cpp
@@ -164,6 +156,14 @@ PreBuild:
 
 ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(PreprocessSuffix): NodoLista.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoLista.cpp$(PreprocessSuffix) NodoLista.cpp
+
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix): NodoPila.cpp ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/ArchivosCodelite/ArchivosCodelite/PECLGonzalezMartinezMarco/NodoPila.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/NodoPila.cpp$(ObjectSuffix) $(IncludePath)
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix): NodoPila.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(DependSuffix) -MM NodoPila.cpp
+
+../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(PreprocessSuffix): NodoPila.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco/NodoPila.cpp$(PreprocessSuffix) NodoPila.cpp
 
 
 -include ../build-$(ConfigurationName)/PECLGonzalezMartinezMarco//*$(DependSuffix)

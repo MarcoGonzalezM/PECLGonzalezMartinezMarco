@@ -8,7 +8,7 @@ class Cola{
         ~Cola();
         void insertar (Paciente* v);
         Paciente* extraer();
-        Paciente* primero();
+        Paciente* cima();
         void mostrar();
         int getLongitud();
         
