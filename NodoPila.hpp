@@ -10,7 +10,7 @@ class NodoPila{
         ~NodoPila();
     private:
         Paciente* valor;
-        NodoPila* sig;
+        NodoPila* siguiente;
         friend class Pila;
 };
 

@@ -1,5 +1,8 @@
 #ifndef CONTROLADOR_HPP
 #define CONTROLADOR_HPP
+#include "Cola.hpp"
+//#include "Lista.hpp"
+#include "Pila.hpp"
 
 class Controlador
 {

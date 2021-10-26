@@ -7,7 +7,7 @@ Controlador::Controlador()
 void Controlador::genera12Pacientes()
 {
 	for(int i=0; i<12; i++) {
-		Paciente* p = new Paciente;
+		Paciente p = new Paciente;
 		p->Pila.insertar;
 		}
 	cout << "\t Pacientes en la pila -> " << Pila.longitud << "\n Pacientes en las colas:" << setw(20) << "\n Sala A-> "

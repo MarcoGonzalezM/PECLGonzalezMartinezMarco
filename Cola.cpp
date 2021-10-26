@@ -10,17 +10,17 @@ void Cola::insertar(Paciente* v){
     pnodoCola nuevo;
     nuevo = new NodoCola(v, primero);
     if (ultimo)
-        ultimo->sig = nuevo;
+        ultimo->siguiente = nuevo;
     ultimo = nuevo;
     
     if (!primero)
-        primero = nuevo
+        primero = nuevo;
     longitud++;
 }
 
 Paciente* Cola::extraer(){
     pnodoCola nodo;
-    Persona* v;
+    Paciente* v;
     nodo = primero;
     if (!nodo)
         return NULL;
