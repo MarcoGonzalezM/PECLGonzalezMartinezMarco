@@ -1,17 +1,24 @@
 #ifndef PACIENTE_HPP
 #define PACIENTE_HPP
 
-class Paciente
+#include <iostream>
+
+
+class Paciente  //dni, id(preoperatorio, por gravedad), n habita(a la par que id), bool enfermedad
 {
 public:
-    Paciente();
-    ~Paciente();
-    
+	Paciente(int ID, int habitacion);
+	bool esHernia();
+	void mostrar();
+	~Paciente();
+	
 private:
-    char DNI [10];
-    int ID;
-    int habitacion;
-    
+	char DNI[10];
+	int ID;
+	int habitacion;
+	bool enfermedad;
+	void generarDNI();
+
 };
 
 #endif // PACIENTE_HPP
