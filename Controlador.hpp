@@ -15,7 +15,7 @@ public:
 	void pacientesEnListaApendicitis();
 	void pacientesEnListaHernias();
 	void pacientesEnArbol();
-	//void muestraPacientes();
+	
 	~Controlador();
 
 private:
