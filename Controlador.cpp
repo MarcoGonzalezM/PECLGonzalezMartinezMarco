@@ -24,9 +24,8 @@ void Controlador::genera12Pacientes()
 	"en el arbol -> " /*<< arbolLongitud */<< endl;
 	}
 
-void Controlador::muestraPacientes()
-{
-	Paciente.mostrar();
+void Controlador::muestraPacientes(){
+	pila1.mostrar();
 }
 
 void Controlador::borraPacientesPila()
