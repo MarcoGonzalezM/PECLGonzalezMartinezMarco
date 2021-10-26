@@ -1,8 +1,4 @@
 #include "Controlador.hpp"
-#include "Paciente.hpp"
-#include "iostream"
-#include "Cola.hpp"
-#include "Pila.hpp"
 
 Controlador::Controlador(){
     Pila pila1 = Pila();
@@ -30,9 +26,9 @@ void Controlador::muestraPacientes(){
 
 void Controlador::borraPacientesPila()
 {
-	int n=Pila.getLongitud()
+	int n=pila1.getLongitud();
 	for(int i=0; i<n; i++){
-		Pila.extraer();
+		pila1.extraer();
 		}
 }
 
