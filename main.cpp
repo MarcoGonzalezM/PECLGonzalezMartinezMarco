@@ -24,7 +24,7 @@ int main(int argc, char** argv){
         cout << "\tB. Consultar todos los pacientes generados en la Pila (pendientes de entrar en las salas).\n";
         cout << "\tC. Borrar los pacientes generados en la pila.\n";
         cout << "\tD. Simular llegada de los pacientes en las colas.\n";
-        cout << "\tE. Consultar los pacientes de las salas A y B.clTabCtrl\n";
+        cout << "\tE. Consultar los pacientes de las salas A y B.\n";
         cout << "\tF. Consultar los pacientes de las salas C y D.\n";
         cout << "\tG. Borrar los todos los pacientes de las salas.\n";
         cout << "\tH. Simular la entrada de los pacientes a los quir\242fanos (a las listas).\n";
@@ -42,7 +42,7 @@ int main(int argc, char** argv){
         cout << "\tQ. Buscar en el ABB los pacientes con apendicitis de la habitaci\242n cuyo n\243mero es el mayor y cuyo "
                 "n\243mero es el menor y los pacientes con "
                 "hernias de la habitaci\242n cuyo n\243mero es el mayor y cuyo n\243mero es el menor.\n";
-        cout << "\tR. Contar el n\24m3ero de pacientes almacenados en el ABB cuyos n\243meros de habitaci\242n son impares.\n";
+        cout << "\tR. Contar el n\243mero de pacientes almacenados en el ABB cuyos n\243meros de habitaci\242n son impares.\n";
         cout << "\tT. Mostrar los pacientes que se encuentran almacenados en un nodo hoja.\n";
         cout << "\tU. Eliminar un paciente indicado por su n\243mero de habitaci\242n (que se pide desde consola) y mostrar "
                 "el \240rbol "

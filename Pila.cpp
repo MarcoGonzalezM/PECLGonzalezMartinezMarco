@@ -33,7 +33,7 @@ Paciente* Pila::cima(){
 
 void Pila::mostrar(){
     pnodoPila aux = ultimo;
-    cout << "\tEl contenido de la pila es: ";
+    cout << "\tEl contenido de la pila es: " << endl;
     while(aux) {
         aux->valor->mostrar();
         aux = aux->siguiente;

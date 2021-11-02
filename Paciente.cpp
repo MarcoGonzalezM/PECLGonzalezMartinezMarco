@@ -16,7 +16,7 @@ void Paciente::mostrar(){
 		cout << "\t El paciente cuyo DNI es " << DNI << " tiene " << (enfermedad ? "hernia" : "apendicitis") << endl;
     } else{
 		cout << "\t El paciente cuyo DNI es " << DNI << " tiene " << (enfermedad ? "hernia" : "apendicitis") << " , su ID es: " << ID << " y su "
-		"habitacion asignada es: " << habitacion << endl;
+		"habitaci\242n asignada es: " << habitacion << endl;
     }
 }
 
