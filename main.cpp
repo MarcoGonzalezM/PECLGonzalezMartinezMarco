@@ -1,20 +1,20 @@
-//#include <Controlador.hpp>
-#include <iostream>
+#include <Controlador.hpp>
+//#include <iostream>
 #include <windows.h> // sólo windows. Comentar para otro SO
 #define _WIN32_WINNT 0x500
 
 using namespace std;
 
 int main(int argc, char** argv){
-    // Controlador controlador;
+    Controlador controlador = Controlador();
     char opcion;
     do {
         ShowWindow(GetConsoleWindow(), SW_MAXIMIZE); // sólo windows. Comentar para otro SO
         cout << "\n\t----------------------------------------------------------------------\n";
-        cout << "\tPacientes en la pila -> " << /*controlador.pacientesEnPila()*/ 0
-             << "\n\tPacientes en las colas:\n \t\tSala A-> " << /*controlador.pacientesEnSalaA()*/ 0 << "\tSala B-> "
-             << /*controlador.pacientesEnSalaB()*/ 0 << "\tSala C-> " << /*controlador.pacientesEnSalaC() */ 0
-             << "\tSala D-> " << /*controlador.pacientesEnSalaD()*/ 0
+        cout << "\tPacientes en la pila -> " << controlador.pacientesEnPila()
+             << "\n\tPacientes en las colas:\n \t\tSala A-> " << controlador.pacientesEnSalaA() << "\tSala B-> "
+             << controlador.pacientesEnSalaB()<< "\tSala C-> " << controlador.pacientesEnSalaC()
+             << "\tSala D-> " << controlador.pacientesEnSalaD()
              << " \n\tPacientes en las listas:\n \t\tQuir\242fano Apendicitis-> "
              << /*controlador.pacientesEnListaApendicitis()*/ 0 << "\tQuir\242fano hernias-> "
              << /*controlador.pacientesEnListaHernias()*/ 0 << "\n\tPacientes en el \240rbol -> "
@@ -24,7 +24,7 @@ int main(int argc, char** argv){
         cout << "\tB. Consultar todos los pacientes generados en la Pila (pendientes de entrar en las salas).\n";
         cout << "\tC. Borrar los pacientes generados en la pila.\n";
         cout << "\tD. Simular llegada de los pacientes en las colas.\n";
-        cout << "\tE. Consultar los pacientes de las salas A y B.\n";
+        cout << "\tE. Consultar los pacientes de las salas A y B.clTabCtrl\n";
         cout << "\tF. Consultar los pacientes de las salas C y D.\n";
         cout << "\tG. Borrar los todos los pacientes de las salas.\n";
         cout << "\tH. Simular la entrada de los pacientes a los quir\242fanos (a las listas).\n";
@@ -55,16 +55,16 @@ int main(int argc, char** argv){
         system("cls"); // sólo windows. Comentar para otro SO
         switch(opcion) {
         case 'A':
-            // controlador.genera12Pacientes();
+            controlador.genera12Pacientes();
             break;
         case 'B':
-            // controlador.muestraPacientes();
+            controlador.muestraPacientes();
            break;
         case 'C':
-            // controlador.borraPacientesPila();
+            controlador.borraPacientesPila();
             break;
         case 'D':
-            // controlador.encolarPacientes();
+            controlador.encolarPacientes();
             break;
         case 'E':
             // controlador.muestraPacientesSalasAyB();

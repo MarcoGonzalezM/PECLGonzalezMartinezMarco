@@ -43,11 +43,15 @@ void Cola::mostrar(){
     pnodoCola nodo = primero;
     cout << "El valor de la cola es: ";
     while (nodo){
-        cout << nodo->valor;
+        nodo->valor->mostrar();
         nodo = nodo->siguiente;
         }
     cout << endl;
     }
+
+int Cola::getLongitud(){
+    return this->longitud;
+}
 
 Cola::~Cola(){
     pnodoCola aux;

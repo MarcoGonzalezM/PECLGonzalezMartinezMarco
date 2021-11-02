@@ -1,8 +1,8 @@
 #include "Paciente.hpp"
 
-Paciente::Paciente(){
-	ID = 0;
-	habitacion = 0;
+Paciente::Paciente(int id, int hab){
+	ID = id;
+	habitacion = hab;
 	enfermedad = (rand() % 2);
 	this->generarDNI();
 }

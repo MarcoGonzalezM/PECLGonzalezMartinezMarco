@@ -6,7 +6,7 @@ using namespace std;
 class Paciente  //dni, id(preoperatorio, por gravedad), n habita(a la par que id), bool enfermedad
 {
 public:
-	Paciente();
+	Paciente(int id, int hab);
 	bool esHernia();
 	void mostrar();
 	~Paciente();
