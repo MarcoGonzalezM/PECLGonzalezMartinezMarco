@@ -79,16 +79,16 @@ int main(int argc, char** argv){
             // controlador.enlistarPacientes();
             break;
         case 'I':
-            // controlador.muestraPacientesApendicitis();
+            controlador.muestraPacientesApendicitis();
             break;
         case 'J':
-            // controlador.muestraPacientesHernias();
+            controlador.muestraPacientesHernias();
             break;
         case 'K':
             // controlador.buscarPacientes();
             break;
         case 'L':
-            // controlador.reiniciar();
+            controlador.reiniciar();
             break;
         case 'M':
             // controlador.crearYDibujarArbol();

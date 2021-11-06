@@ -80,6 +80,39 @@ void Controlador::borraPacientesColas(){
     }
 }
 
-Controlador::~Controlador(){
+void Controlador::enlistarPacientes(){
+    
 }
 
+void Controlador::muestraPacientesApendicitis(){
+    listaA.mostrar();
+}
+
+void Controlador::muestraPacientesHernias(){
+    listaH.mostrar();
+}
+
+void Controlador::buscarPacientes(){
+    Paciente* pac1 = listaA.tail();
+    Paciente* pac2 = listaH.cabeza();
+    pac1->mostrar();
+    pac2->mostrar();
+}
+
+void Controlador::borraPacientesListas(){
+    while (listaA.getLongitud()>0){
+        listaA.extraer();
+    }
+    while (listaH.getLongitud()>0){
+        listaH.extraer();
+    }
+}
+
+void Controlador::reiniciar(){
+    borraPacientesPila();
+    borraPacientesColas();
+    borraPacientesListas();
+}
+
+Controlador::~Controlador(){
+}

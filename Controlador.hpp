@@ -3,6 +3,7 @@
 #include <iomanip>
 #include "Cola.hpp"
 #include "Pila.hpp"
+#include "Lista.hpp"
 
 class Controlador
 {
@@ -27,13 +28,14 @@ public:
     void muestraPacientesApendicitis();
     void muestraPacientesHernias();
     void buscarPacientes();
+    void borraPacientesListas();
     void reiniciar();
 	~Controlador();
 
 private:
     Pila pila1;
     Cola colaA, colaB, colaC, colaD;
-	
+	Lista listaA, listaH;
 };
 
 #endif // CONTROLADOR_HPP
