@@ -10,12 +10,12 @@ public:
 	void insertar(Paciente* v);
 	Paciente* extraer();
 	Paciente* cabeza();
-	Paciente* ultimo();
+	Paciente* tail();
 	void mostrar();
 	int getLongitud();
 
 private:
-	pnodoLista primero, ultimo, resto;
+	pnodoLista primero, ultimo;
 	int longitud;
 
 };

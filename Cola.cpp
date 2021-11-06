@@ -8,7 +8,7 @@ Cola::Cola(){
 
 void Cola::insertar(Paciente* v){
     pnodoCola nuevo;
-    nuevo = new NodoCola(v, primero);
+    nuevo = new NodoCola(v);
     if (ultimo)
         ultimo->siguiente = nuevo;
     ultimo = nuevo;

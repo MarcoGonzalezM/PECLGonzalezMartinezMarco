@@ -67,13 +67,13 @@ int main(int argc, char** argv){
             controlador.encolarPacientes();
             break;
         case 'E':
-            // controlador.muestraPacientesSalasAyB();
+            controlador.muestraPacientesSalasAyB();
             break;
         case 'F':
-            // controlador.muestraPacientesSalasCyD();
+            controlador.muestraPacientesSalasCyD();
             break;
         case 'G':
-            // controlador.borraPacientesColas();
+            controlador.borraPacientesColas();
             break;
         case 'H':
             // controlador.enlistarPacientes();

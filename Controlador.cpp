@@ -55,7 +55,31 @@ void Controlador::encolarPacientes(){
     }
 }
 
-Controlador::~Controlador()
-{
+void Controlador::muestraPacientesSalasAyB(){
+    colaA.mostrar();
+    colaB.mostrar();
+}
+	
+void Controlador::muestraPacientesSalasCyD(){
+    colaC.mostrar();
+    colaD.mostrar();
+}
+    
+void Controlador::borraPacientesColas(){
+	while (colaA.getLongitud()>0){
+        colaA.extraer();
+    }
+    while (colaB.getLongitud()>0){
+        colaB.extraer();
+    }
+	while (colaC.getLongitud()>0){
+        colaC.extraer();
+    }
+    while (colaD.getLongitud()>0){
+        colaD.extraer();
+    }
+}
+
+Controlador::~Controlador(){
 }
 

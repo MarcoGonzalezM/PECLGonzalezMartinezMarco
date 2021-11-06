@@ -4,7 +4,7 @@
 
 class NodoCola{
     public:
-        NodoCola(Paciente* v, NodoCola* sig);
+        NodoCola(Paciente* v, NodoCola* sig=NULL);
         ~NodoCola();
     private:
         Paciente* valor;
