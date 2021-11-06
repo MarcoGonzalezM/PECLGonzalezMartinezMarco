@@ -1,6 +1,13 @@
 #include "Controlador.hpp"
 
 Controlador::Controlador(){
+    for (int i=0; i<98;i++){
+        if (i<49){
+            IDs_libres[i] = i+1;
+        } else {
+            IDs_libres[i] = i+2;
+        }
+    }
 }
 
 int Controlador::pacientesEnPila(){
@@ -21,7 +28,7 @@ int Controlador::pacientesEnSalaD(){
     
 void Controlador::genera12Pacientes(){
 	for(int i=1; i<13; i++) {
-		Paciente* p = new Paciente(i,i);
+		Paciente* p = new Paciente();
 		pila1.insertar(p);
     }
 }
@@ -37,8 +44,10 @@ void Controlador::borraPacientesPila(){
 }
 
 void Controlador::encolarPacientes(){
-	while (pila1.getLongitud()>0){
+    for (int i=0;pila1.getLongitud()>0;i++){
         Paciente* p = pila1.extraer();
+        p->setID(i + 50*p->esHernia());
+        p->setHabitacion(i + 100 + 100*p->esHernia());
         if (p->esHernia()) {
             if (colaC.getLongitud()>colaD.getLongitud()){
                 colaD.insertar(p);
@@ -56,12 +65,16 @@ void Controlador::encolarPacientes(){
 }
 
 void Controlador::muestraPacientesSalasAyB(){
+    cout << "Sala A:" << endl;
     colaA.mostrar();
+    cout << "Sala B:" << endl;
     colaB.mostrar();
 }
 	
 void Controlador::muestraPacientesSalasCyD(){
+    cout << "Sala C:" << endl;
     colaC.mostrar();
+    cout << "Sala D:" << endl;
     colaD.mostrar();
 }
     

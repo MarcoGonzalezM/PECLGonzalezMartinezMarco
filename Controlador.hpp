@@ -36,6 +36,7 @@ private:
     Pila pila1;
     Cola colaA, colaB, colaC, colaD;
 	Lista listaA, listaH;
+    int IDs_libres [98];
 };
 
 #endif // CONTROLADOR_HPP
