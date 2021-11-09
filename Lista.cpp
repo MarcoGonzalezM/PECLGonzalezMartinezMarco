@@ -8,10 +8,12 @@ Lista::Lista() //las listas tienen que hacerse ordenadas
 }
 
 Paciente* Lista::insertar(Paciente v*){    //INSERTAR EN ORDEN
-	pnodoLista nuevo;
+	pnodoLista nuevo, previo;
 	nuevo = new NodoLista(v);
+	previo = new NodoLista(v);
 	if (primero)
 		if (v<primero)
+			sig = primero;
 			primero = v;
 		else{
 			pnodoLista aux = primero;
@@ -59,6 +61,12 @@ Paciente* Lista::cabeza(){
 	return primero->valor;
 }
 
+Paciente* Lista::tail(){
+	pnodoLista nodo;
+	if (!ultimo)
+		return 0;
+	return ultimo->valor;
+}
 
 
 Lista::~Lista()
