@@ -6,10 +6,12 @@ Pila::Pila(){
 }
 
 void Pila::insertar(Paciente* v){
-    pnodoPila nuevo;
-    nuevo = new NodoPila(v, ultimo);
-    ultimo = nuevo;
-    longitud++;
+    if (longitud<48){
+        pnodoPila nuevo;
+        nuevo = new NodoPila(v, ultimo);
+        ultimo = nuevo;
+        longitud++;
+    }
 }
 
 Paciente* Pila::extraer(){

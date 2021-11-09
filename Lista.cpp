@@ -15,12 +15,17 @@ void Lista::insertar(Paciente* v){    //INSERTAR EN ORDEN
 			primero = nuevo;
         } else{
 			pnodoLista aux = primero;
-			while(aux->valor->getID() < v->getID()) {
+			while(aux->siguiente->valor->getID() < nuevo->valor->getID()) {
 				aux = aux->siguiente;
 			}
+            if (aux->siguiente){
+                nuevo->siguiente = aux->siguiente;
+                aux->siguiente = nuevo;
+            } else{
+            ultimo->siguiente = nuevo;
+            ultimo = nuevo;
+            }
 		}
-		ultimo->siguiente = nuevo;
-        ultimo = nuevo;
 	} else{
 		primero = nuevo;
         ultimo = nuevo;
