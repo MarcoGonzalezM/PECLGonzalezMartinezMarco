@@ -24,7 +24,7 @@ Paciente* Cola::extraer(){
     nodo = primero;
     if (!nodo)
         return NULL;
-    primero = nodo->siguiente;
+    primero = primero->siguiente;
     v = nodo->valor;
     delete nodo;
     if (!primero)

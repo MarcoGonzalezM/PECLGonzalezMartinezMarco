@@ -10,27 +10,25 @@ Lista::Lista() //las listas tienen que hacerse ordenadas
 void Lista::insertar(Paciente* v){    //INSERTAR EN ORDEN
 	pnodoLista nuevo;
 	nuevo = new NodoLista(v);
-	if (primero){
-		if (nuevo->valor->getID() < primero->valor->getID()){
-			primero = nuevo;
-        } else{
-			pnodoLista aux = primero;
-			while(aux->siguiente->valor->getID() < nuevo->valor->getID()) {
-				aux = aux->siguiente;
-			}
-            if (aux->siguiente){
-                nuevo->siguiente = aux->siguiente;
-                aux->siguiente = nuevo;
-            } else{
-            ultimo->siguiente = nuevo;
-            ultimo = nuevo;
-            }
-		}
-	} else{
-		primero = nuevo;
-        ultimo = nuevo;
+    if (!(primero) || nuevo->valor->getID() > primero->valor->getID()){
+        nuevo->siguiente = primero;
+        primero = nuevo;
+    } else{
+        pnodoLista aux = primero;
+        while (aux->siguiente && aux->siguiente->valor->getID() > nuevo->valor->getID()) {
+            aux = aux->siguiente;
+        }
+        if (aux->siguiente) {
+            nuevo->siguiente = aux->siguiente;
+        }
+        aux->siguiente=nuevo;
+        while(aux->siguiente){
+            aux = aux->siguiente;
+        }
+        ultimo = aux;
     }
     longitud++;
+    
 }
 
 Paciente* Lista::extraer(){
