@@ -41,7 +41,7 @@ Paciente* Cola::cima(){
 
 void Cola::mostrar(){
     pnodoCola nodo = primero;
-    cout << "El valor de la cola es: ";
+    cout << "El valor de la cola es: " << endl;
     while (nodo){
         nodo->valor->mostrar();
         nodo = nodo->siguiente;

@@ -8,6 +8,7 @@ class Paciente  //dni, id(preoperatorio, por gravedad), n habita(a la par que id
 public:
 	Paciente();
 	bool esHernia();
+    int getID();
 	void mostrar();
     void setID(int id);
     void setHabitacion(int hab);

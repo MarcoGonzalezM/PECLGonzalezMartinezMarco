@@ -2,31 +2,30 @@
 
 Lista::Lista() //las listas tienen que hacerse ordenadas
 {
-	cabeza = NULL;
+	primero = NULL;
 	ultimo = NULL;
 	longitud = 0;
 }
 
-Paciente* Lista::insertar(Paciente v*){    //INSERTAR EN ORDEN
-	pnodoLista nuevo, previo;
+void Lista::insertar(Paciente* v){    //INSERTAR EN ORDEN
+	pnodoLista nuevo;
 	nuevo = new NodoLista(v);
-	previo = new NodoLista(v);
-	if (primero)
-		if (v<primero)
-			sig = primero;
-			primero = v;
-		else{
+	if (primero){
+		if (nuevo->valor->getID() < primero->valor->getID()){
+			primero = nuevo;
+        } else{
 			pnodoLista aux = primero;
-			while(aux<v) {
+			while(aux->valor->getID() < v->getID()) {
 				aux = aux->siguiente;
-				
 			}
 		}
 		ultimo->siguiente = nuevo;
-	ultimo = nuevo;
-	else (!primero)
+        ultimo = nuevo;
+	} else{
 		primero = nuevo;
-	longitud++;
+        ultimo = nuevo;
+    }
+    longitud++;
 }
 
 Paciente* Lista::extraer(){
@@ -46,28 +45,28 @@ Paciente* Lista::extraer(){
 
 void Lista::mostrar(){
 	pnodoLista aux = primero;
-	cout << "\tLos pacientes en lista: ";
+	cout << "\tLos pacientes en lista: " << endl;
 	while(aux) {
-		cout << " -> " << aux->valor;
+		aux->valor->mostrar();
 		aux = aux->siguiente;
 	}
-	cout << endl;
 }
 
 Paciente* Lista::cabeza(){
-	pnodoLista nodo;
 	if (!primero)
-		return 0;
+		return NULL;
 	return primero->valor;
 }
 
 Paciente* Lista::tail(){
-	pnodoLista nodo;
 	if (!ultimo)
-		return 0;
+		return NULL;
 	return ultimo->valor;
 }
 
+int Lista::getLongitud(){
+    return longitud;
+}
 
 Lista::~Lista()
 {

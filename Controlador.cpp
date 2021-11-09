@@ -25,6 +25,12 @@ int Controlador::pacientesEnSalaC(){
 int Controlador::pacientesEnSalaD(){
         return colaD.getLongitud();
     }
+int Controlador::pacientesEnListaApendicitis(){
+        return listaA.getLongitud();
+    }
+int Controlador::pacientesEnListaHernias(){
+        return listaH.getLongitud();
+    }
     
 void Controlador::genera12Pacientes(){
 	for(int i=1; i<13; i++) {
@@ -46,8 +52,8 @@ void Controlador::borraPacientesPila(){
 void Controlador::encolarPacientes(){
     for (int i=0;pila1.getLongitud()>0;i++){
         Paciente* p = pila1.extraer();
-        p->setID(i + 50*p->esHernia());
-        p->setHabitacion(i + 100 + 100*p->esHernia());
+        p->setID(1 + i + 50*p->esHernia());
+        p->setHabitacion(1 + i + 100 + 100*p->esHernia());
         if (p->esHernia()) {
             if (colaC.getLongitud()>colaD.getLongitud()){
                 colaD.insertar(p);
@@ -94,8 +100,19 @@ void Controlador::borraPacientesColas(){
 }
 
 void Controlador::enlistarPacientes(){
-    
-}
+	while (colaA.getLongitud()>0){
+        listaA.insertar(colaA.extraer());
+    }
+    while (colaB.getLongitud()>0){
+        listaA.insertar(colaB.extraer());
+    }
+	while (colaC.getLongitud()>0){
+        listaH.insertar(colaC.extraer());
+    }
+    while (colaD.getLongitud()>0){
+        listaH.insertar(colaD.extraer());
+    }
+}    
 
 void Controlador::muestraPacientesApendicitis(){
     listaA.mostrar();

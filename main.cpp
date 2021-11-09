@@ -16,8 +16,8 @@ int main(int argc, char** argv){
              << controlador.pacientesEnSalaB()<< "\tSala C-> " << controlador.pacientesEnSalaC()
              << "\tSala D-> " << controlador.pacientesEnSalaD()
              << " \n\tPacientes en las listas:\n \t\tQuir\242fano Apendicitis-> "
-             << /*controlador.pacientesEnListaApendicitis()*/ 0 << "\tQuir\242fano hernias-> "
-             << /*controlador.pacientesEnListaHernias()*/ 0 << "\n\tPacientes en el \240rbol -> "
+             << controlador.pacientesEnListaApendicitis() << "\tQuir\242fano hernias-> "
+             << controlador.pacientesEnListaHernias() << "\n\tPacientes en el \240rbol -> "
              << /*controlador.pacientesEnArbol()*/ 0 << "\n";
         cout << "\t----------------------------------------------------------------------\n\n";
         cout << "\tA. Generar 12 pacientes de forma aleatoria y almacenarlos en la Pila.\n";
@@ -76,7 +76,7 @@ int main(int argc, char** argv){
             controlador.borraPacientesColas();
             break;
         case 'H':
-            // controlador.enlistarPacientes();
+            controlador.enlistarPacientes();
             break;
         case 'I':
             controlador.muestraPacientesApendicitis();
@@ -85,7 +85,7 @@ int main(int argc, char** argv){
             controlador.muestraPacientesHernias();
             break;
         case 'K':
-            // controlador.buscarPacientes();
+            controlador.buscarPacientes();
             break;
         case 'L':
             controlador.reiniciar();

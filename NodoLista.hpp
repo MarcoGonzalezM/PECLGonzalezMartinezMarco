@@ -5,7 +5,7 @@
 class NodoLista
 {
 public:
-	NodoLista(Paciente* v, NodoLista* sig);
+	NodoLista(Paciente* v, NodoLista* sig=NULL);
 	~NodoLista();
 
 private:
