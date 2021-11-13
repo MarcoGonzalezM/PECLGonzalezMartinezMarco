@@ -33,10 +33,16 @@ int Controlador::pacientesEnListaHernias(){
     }
     
 void Controlador::genera12Pacientes(){
-	for(int i=1; i<13; i++) {
+	if (pila1.getLongitud()==48){
+		cout << "El número de pacientes en pila está al máximo (48)." << endl;
+	}
+	else{
+		for(int i=1; i<13; i++) {
 		Paciente* p = new Paciente();
 		pila1.insertar(p);
-    }
+		}
+	}
+	
 }
 
 void Controlador::muestraPacientes(){
