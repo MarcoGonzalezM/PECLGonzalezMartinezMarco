@@ -44,7 +44,11 @@ void Paciente::setHabitacion(int hab){
 
 int Paciente::getID(){
     return ID;    
-    }
+}
+
+int Paciente::getHabitacion(){
+    return habitacion;
+}
 
 Paciente::~Paciente()
 {
