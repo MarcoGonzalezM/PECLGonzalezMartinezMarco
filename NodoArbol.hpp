@@ -5,6 +5,8 @@
 class NodoArbol{
 public:
     NodoArbol(Paciente * valor);
+    bool hayHabImpares();
+    Paciente * getPaciente();
     ~NodoArbol();
 
 private:

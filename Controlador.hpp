@@ -5,9 +5,9 @@
 #include "Cola.hpp"
 #include "Pila.hpp"
 #include "Lista.hpp"
+#include "Arbol.hpp"
 
-class Controlador
-{
+class Controlador{
 public:
 	Controlador();
     int pacientesEnPila();
@@ -31,6 +31,14 @@ public:
     void buscarPacientes();
     void borraPacientesListas();
     void reiniciar();
+    void crearYDibujarArbol();
+    void muestraPacientesApendicitisEnOrden();
+    void muestraPacientesHerniasEnOrden();
+    void muestraPacientesInOrden();
+    void buscarPacientesArbol();
+    void contarPacientesHabImpar();
+    void mostrarPacientesHoja();
+    void eliminarPaciente();
 	~Controlador();
 
 private:
@@ -41,6 +49,7 @@ private:
     int IDsH_libres [49];
     int habA_libres [99];
     int habH_libres [99];
+    Arbol abb1;
 };
 
 #endif // CONTROLADOR_HPP

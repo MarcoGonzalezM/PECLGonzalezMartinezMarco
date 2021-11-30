@@ -4,6 +4,90 @@ Arbol::Arbol(){
 }
 
 Arbol::~Arbol(){
+    raiz = NULL;
+}
+
+void Arbol::insertar(Paciente * valor){
+    insertar(raiz,valor);
+}
+
+pnodoAbb Arbol::insertar(pnodoAbb nodo, Paciente * valor){
+    //Me falla
+    if (!nodo){
+        nodo = pnodoAbb(valor);
+    } else{
+        if (valor<=nodo->valor){
+            nodo->izq = insertar(nodo->izq, valor);
+        } else {
+            nodo->der = insertar(nodo->der, valor);
+        }
+    }
+    return nodo;
+}
+
+void Arbol::preordenIzq(){
+    preorden(raiz->izq);
+}
+
+void Arbol::preordenDer(){
+    preorden(raiz->izq);
+}
+
+
+void Arbol::preorden(pnodoAbb nodo){
+    if (nodo){
+        nodo->valor->mostrar();
+        preorden(nodo->izq);
+        preorden(nodo->der);
+    }
+}
+
+void Arbol::inorden(){
+    inorden(raiz);
+    }
+
+void Arbol::inorden(pnodoAbb nodo){
+    if (nodo){
+        inorden(nodo->izq);
+        nodo->valor->mostrar();
+        inorden(nodo->der);
+    }
+}
+
+int Arbol::contarHabImpares(){
+    return contarHabImpares(raiz);
+}
+
+int Arbol::contarHabImpares(pnodoAbb nodo){
+    if (!nodo or not(nodo->hayHabImpares())){
+        return 0;
+    } else {
+        if(nodo->valor->getHabitacion()%2){
+            return 1 + contarHabImpares(nodo->izq) + contarHabImpares(nodo->der);
+        } else {
+            return contarHabImpares(nodo->izq) + contarHabImpares(nodo->der);
+        }
+    }
+}
+
+pnodoAbb Arbol::subArbolIzq(){
+    return raiz->izq;
+}
+pnodoAbb Arbol::subArbolDer(){
+    return raiz->der;
+}
+
+
+int Arbol::altura(pnodoAbb nodo){
+    if (!nodo->valor){
+        return -1;
+    } else {
+        if (!nodo->izq || !nodo->der){
+            return 0;
+        } else {
+            return 1 + max(altura(nodo->izq),altura(nodo->der));
+        }
+    }
 }
 
 void Arbol::dibujar(){
@@ -62,7 +146,7 @@ void Arbol::dibujarNodo(vector<string>& output, vector<string> linkAbove, pnodoA
     p = max(p, (int)output[nivel].size());
     if(nodo->izq) {
         int numeroQueQuieroImprimirEnElArbol =
-            nodo->izq->valor.getHabitacion(); // En vez de este valor, tenéis que coger el nº de habitación
+            nodo->izq->valor->getHabitacion(); // En vez de este valor, tenéis que coger el nº de habitación
         string izqdato = SP + to_string(numeroQueQuieroImprimirEnElArbol) + SP;
         dibujarNodo(output, linkAbove, nodo->izq, nivel + 1, p - izqdato.size(), 'L');
         p = max(p, (int)output[nivel + 1].size());
@@ -71,7 +155,7 @@ void Arbol::dibujarNodo(vector<string>& output, vector<string> linkAbove, pnodoA
     if(space > 0)
         output[nivel] += string(space, ' ');
     int numeroQueQuieroImprimirEnElArbol =
-        nodo->valor.getHabitacion(); // En vez de este valor, tenéis que coger el nº de habitación
+        nodo->valor->getHabitacion(); // En vez de este valor, tenéis que coger el nº de habitación
     string nododato = SP + to_string(numeroQueQuieroImprimirEnElArbol) + SP;
     output[nivel] += nododato;
     space = p + SP.size() - linkAbove[nivel].size();

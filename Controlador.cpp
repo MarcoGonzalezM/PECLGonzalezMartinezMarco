@@ -71,11 +71,8 @@ void Controlador::borraPacientesPila(){
 void Controlador::encolarPacientes(){
     for (int i=0;pila1.getLongitud()>0;i++){
         Paciente* p = pila1.extraer();
-        p->setID(1 + i + 50*p->esHernia());
-        p->setHabitacion(1 + i + 100 + 100*p->esHernia());
         if (p->esHernia()) {
             p->setID(IDsH_libres[i]);
-            p->setHabitacion(habH_libres[i]);
             if (colaC.getLongitud()>colaD.getLongitud()){
                 colaD.insertar(p);
             }else{
@@ -83,7 +80,6 @@ void Controlador::encolarPacientes(){
             }
         }else{
             p->setID(IDsA_libres[i]);
-            p->setHabitacion(habA_libres[i]);
             if (colaA.getLongitud()>colaB.getLongitud()){
                 colaB.insertar(p);
             }else{
@@ -165,6 +161,40 @@ void Controlador::reiniciar(){
     borraPacientesPila();
     borraPacientesColas();
     borraPacientesListas();
+}
+
+void Controlador::crearYDibujarArbol(){
+    for (int i=0;pila1.getLongitud()>0;i++){
+        Paciente * p = pila1.extraer();
+        if (p->esHernia()) {
+            p->setHabitacion(habH_libres[i]);
+        }else{
+            p->setHabitacion(habA_libres[i]);
+        }
+        abb1.insertar(p);
+    }
+    abb1.dibujar();
+}
+
+void Controlador::muestraPacientesApendicitisEnOrden(){
+    abb1.preordenIzq();
+}
+void Controlador::muestraPacientesHerniasEnOrden(){
+    abb1.preordenDer();
+}
+void Controlador::muestraPacientesInOrden(){
+    abb1.inorden();
+}
+void Controlador::buscarPacientes(){
+    //Mostrar paciente con menor número de habitación en Apendicitis
+    cout << "Paciente con apendicitis cuyo número de habitación es el menor";
+    pnodoAbb nodo = abb1.subArbolIzq();
+    while (nodo.subArbolIzq()){
+        
+    }
+}
+void Controlador::contarPacientesHabImpar(){
+    cout << abb1.contarHabImpares();    
 }
 
 Controlador::~Controlador(){

@@ -91,28 +91,28 @@ int main(int argc, char** argv){
             controlador.reiniciar();
             break;
         case 'M':
-            // controlador.crearYDibujarArbol();
+            controlador.crearYDibujarArbol();
             break;
         case 'N':
-            // controlador.muestraPacientesApendicitisEnOrden();
+            controlador.muestraPacientesApendicitisEnOrden();
             break;
         case 'O':
-            // controlador.muestraPacientesHerniasEnOrden();
+            controlador.muestraPacientesHerniasEnOrden();
             break;
         case 'P':
-            // controlador.muestraPacientesInOrden();
+            controlador.muestraPacientesInOrden();
             break;
         case 'Q':
-            // controlador.buscarPacientesArbol();
+            //controlador.buscarPacientesArbol();
             break;
         case 'R':
-            // controlador.contarPacientesHabImpar();
+            controlador.contarPacientesHabImpar();
             break;
         case 'T':
-            // controlador.mostrarPacientesHoja();
+            //controlador.mostrarPacientesHoja();
             break;
         case 'U':
-            // controlador.eliminarPaciente();
+            //controlador.eliminarPaciente();
             break;
         case 'S':
             cout << "Saliendo del programa...\n";
