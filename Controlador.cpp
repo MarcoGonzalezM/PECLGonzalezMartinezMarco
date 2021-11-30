@@ -1,13 +1,26 @@
 #include "Controlador.hpp"
 
 Controlador::Controlador(){
-    for (int i=0; i<98;i++){
-        if (i<49){
-            IDs_libres[i] = i+1;
-        } else {
-            IDs_libres[i] = i+2;
-        }
+    //Establecer la semilla de RNG
+    srand((unsigned int)time(NULL));
+    
+    //Crear las listas de IDs y habitaciones y reordenarlas con el método random_shuffle
+    for (int i=1; i<=49;i++){
+        IDsA_libres[i] = i;
     }
+    for (int i=51; i<=49;i++){
+        IDsH_libres[i] = i;
+    }
+    for (int i=101; i<199;i++){
+        habA_libres[i] = i;
+    }
+    for (int i=201; i<299;i++){
+        habH_libres[i] = i;
+    }
+    random_shuffle(&IDsA_libres[0], &IDsA_libres[49]);
+    random_shuffle(&IDsH_libres[0], &IDsH_libres[49]);
+    random_shuffle(&habA_libres[0], &habA_libres[99]);
+    random_shuffle(&habH_libres[0], &habH_libres[99]);
 }
 
 int Controlador::pacientesEnPila(){
@@ -61,12 +74,16 @@ void Controlador::encolarPacientes(){
         p->setID(1 + i + 50*p->esHernia());
         p->setHabitacion(1 + i + 100 + 100*p->esHernia());
         if (p->esHernia()) {
+            p->setID(IDsH_libres[i]);
+            p->setHabitacion(habH_libres[i]);
             if (colaC.getLongitud()>colaD.getLongitud()){
                 colaD.insertar(p);
             }else{
                 colaC.insertar(p);
             }
         }else{
+            p->setID(IDsA_libres[i]);
+            p->setHabitacion(habA_libres[i]);
             if (colaA.getLongitud()>colaB.getLongitud()){
                 colaB.insertar(p);
             }else{
