@@ -18,7 +18,7 @@ int main(int argc, char** argv){
              << " \n\tPacientes en las listas:\n \t\tQuir\242fano Apendicitis-> "
              << controlador.pacientesEnListaApendicitis() << "\tQuir\242fano hernias-> "
              << controlador.pacientesEnListaHernias() << "\n\tPacientes en el \240rbol -> "
-             << /*controlador.pacientesEnArbol()*/ 0 << "\n";
+             << controlador.pacientesEnArbol()-1 << "\n";//-1 por que se ignora el paciente ficticio
         cout << "\t----------------------------------------------------------------------\n\n";
         cout << "\tA. Generar 12 pacientes de forma aleatoria y almacenarlos en la Pila.\n";
         cout << "\tB. Consultar todos los pacientes generados en la Pila (pendientes de entrar en las salas).\n";
@@ -103,16 +103,16 @@ int main(int argc, char** argv){
             controlador.muestraPacientesInOrden();
             break;
         case 'Q':
-            //controlador.buscarPacientesArbol();
+            controlador.buscarPacientesArbol();
             break;
         case 'R':
             controlador.contarPacientesHabImpar();
             break;
         case 'T':
-            //controlador.mostrarPacientesHoja();
+            controlador.mostrarPacientesHoja();
             break;
         case 'U':
-            //controlador.eliminarPaciente();
+            controlador.eliminarPaciente();
             break;
         case 'S':
             cout << "Saliendo del programa...\n";

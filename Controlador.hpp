@@ -39,16 +39,18 @@ public:
     void contarPacientesHabImpar();
     void mostrarPacientesHoja();
     void eliminarPaciente();
+	void borraPacientesArbol();
 	~Controlador();
 
 private:
     Pila pila1;
     Cola colaA, colaB, colaC, colaD;
 	Lista listaA, listaH;
-    int IDsA_libres [49];
-    int IDsH_libres [49];
-    int habA_libres [99];
-    int habH_libres [99];
+    //https://www.geeksforgeeks.org/initialize-a-vector-in-cpp-different-ways/
+    vector<int> IDsA_libres;
+    vector<int> IDsH_libres;
+    vector<int> habA_libres;
+    vector<int> habH_libres;
     Arbol abb1;
 };
 
