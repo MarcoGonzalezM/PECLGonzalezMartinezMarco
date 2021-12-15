@@ -1,7 +1,9 @@
 #include "Arbol.hpp"
 
 Arbol::Arbol(){
-	raiz = NULL;
+	Paciente * p = new Paciente();
+	p->setHabitacion(200);
+	raiz = new NodoArbol(p);
 }
 
 Arbol::~Arbol(){
@@ -47,7 +49,6 @@ void Arbol::inordenDer(){
     inorden(raiz->der);
 }
 
-//PREORDEN
 void Arbol::preorden(pnodoAbb nodo){
     if (nodo){
         nodo->valor->mostrar();
@@ -90,6 +91,14 @@ pnodoAbb Arbol::subArbolDer(){
 	return raiz->der;
 }
 
+pnodoAbb Arbol::minimo(){
+	return minimo(raiz);
+}
+
+pnodoAbb Arbol::maximo(){
+	return maximo(raiz);
+}
+
 pnodoAbb Arbol::minimo(pnodoAbb nodo){
 	if (!nodo){
 		return NULL;
@@ -119,11 +128,12 @@ void Arbol::mostrarHojas(){
 }
 
 void Arbol::mostrarHojas(pnodoAbb nodo){
+	if (!nodo) return;
 	if (nodo->esHoja()){
 		nodo->valor->mostrar();
 	} else {
-		if (nodo->izq) mostrarHojas(nodo->izq);
-		if (nodo->der) mostrarHojas(nodo->der);
+		mostrarHojas(nodo->izq);
+		mostrarHojas(nodo->der);
 	}
 }
 
@@ -132,13 +142,15 @@ void Arbol::eliminarPaciente(int hab){
 }
 
 pnodoAbb Arbol::eliminarPaciente(pnodoAbb nodo, int hab){
-	if (hab==nodo->valor->getHabitacion()){
-		nodo = eliminarNodo(nodo);
-	} else {
-		if (hab<nodo->valor->getHabitacion()){
-			eliminarPaciente(nodo->izq, hab);
+	if(nodo){
+			if (hab==nodo->valor->getHabitacion()){
+			nodo = eliminarNodo(nodo);
 		} else {
-			eliminarPaciente(nodo->der, hab);
+			if (hab<nodo->valor->getHabitacion()){
+				nodo->izq = eliminarPaciente(nodo->izq, hab);
+			} else {
+				nodo->der = eliminarPaciente(nodo->der, hab);
+			}
 		}
 	}
 	return nodo;
@@ -164,7 +176,7 @@ pnodoAbb Arbol::eliminarNodo(pnodoAbb nodo){
 
 int Arbol::altura(pnodoAbb nodo){
     if (!nodo){
-        return -1;
+        return 0;
     } else {
         if (nodo->esHoja()){
             return 0;
@@ -175,26 +187,29 @@ int Arbol::altura(pnodoAbb nodo){
 }
 
 void Arbol::dibujar(){
-	int h = altura(raiz);
+	int h = 1 + altura(raiz);
 	vector<string> output(h), linkAbove(h);
 	dibujarNodo(output, linkAbove, raiz, 0, 5, ' ');
 	for(int i = 1; i < h; i++) {
-		for(int j = 0; j < linkAbove[i].size(); j++) {//WARNING
+		for(int j = 0; j < linkAbove[i].size(); j++) {
 			if(linkAbove[i][j] != ' '){
 				int size = output[i - 1].size();
-				if(size < j + 1)
-					output[i - 1] += string(j + 1 - size, ' ');
+				if(size < j + 1) output[i - 1] += string(j + 1 - size, ' ');
 				int jj = j;
 				if(linkAbove[i][j] == 'L') {
-					while(output[i - 1][jj] == ' ')
+					while(output[i - 1][jj] == ' ') {
 						jj++;
-					for(int k = j + 1; k < jj - 1; k++)
+					}
+					for(int k = j + 1; k < jj - 1; k++){
 						output[i - 1][k] = '_';
+					}
 				} else if(linkAbove[i][j] == 'R') {
-					while(output[i - 1][jj] == ' ')
+					while(output[i - 1][jj] == ' '){
 						jj--;
-					for(int k = j - 1;k > jj + 1; k--)
+					}
+					for(int k = j - 1;k > jj + 1; k--){
 						output[i - 1][k] = '_';
+					}
 				}
 				linkAbove[i][j] = '|';
 			}

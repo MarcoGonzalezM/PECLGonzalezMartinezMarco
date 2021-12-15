@@ -15,6 +15,8 @@ public:
 	int contarHabImpares();
 	pnodoAbb subArbolIzq();
 	pnodoAbb subArbolDer();
+	pnodoAbb minimo();
+	pnodoAbb maximo();
 	pnodoAbb minimo(pnodoAbb);
 	pnodoAbb maximo(pnodoAbb);
 	void mostrarHojas();

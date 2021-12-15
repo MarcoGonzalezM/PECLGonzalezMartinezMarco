@@ -11,10 +11,10 @@ Controlador::Controlador(){
     for (int i=51; i<=99;i++){
         IDsH_libres.push_back(i);
     }
-    for (int i=101; i<199;i++){
+    for (int i=101; i<=199;i++){
         habA_libres.push_back(i);
     }
-    for (int i=201; i<299;i++){
+    for (int i=201; i<=299;i++){
         habH_libres.push_back(i);
     }
     
@@ -24,9 +24,7 @@ Controlador::Controlador(){
     random_shuffle(habA_libres.begin(), habA_libres.end());
     random_shuffle(habH_libres.begin(), habH_libres.end());
 	
-	Paciente * p = new Paciente();
-	p->setHabitacion(200);
-	abb1.insertar(p);
+
 
 }
 
@@ -54,16 +52,20 @@ int Controlador::pacientesEnListaHernias(){
 int Controlador::pacientesEnArbol(){
 	return abb1.getTamanno();
 }
+int Controlador::pacientesEnSistema(){
+	return pila1.getLongitud() + colaA.getLongitud() + colaB.getLongitud() + colaC.getLongitud() + colaD.getLongitud()
+		+ listaA.getLongitud() + listaH.getLongitud() + abb1.getTamanno();
+}
     
 void Controlador::genera12Pacientes(){
-	if (pila1.getLongitud()==48){
-		cout << "El n\243mero de pacientes en pila est\240 al m\240ximo (48)." << endl;
+	if (pacientesEnSistema()<48){
+		for(int i=1; i<13; i++) {
+			Paciente* p = new Paciente();
+			pila1.insertar(p);
+		}
 	}
 	else{
-		for(int i=1; i<13; i++) {
-		Paciente* p = new Paciente();
-		pila1.insertar(p);
-		}
+		cout << "El n\243mero de pacientes en pila est\240 al m\240ximo (48)." << endl;
 	}
 }
 
@@ -196,6 +198,7 @@ void Controlador::reiniciar(){
 	borraPacientesPila();
 	borraPacientesColas();
 	borraPacientesListas();
+	borraPacientesArbol();
 }
 
 void Controlador::crearYDibujarArbol(){
@@ -207,7 +210,7 @@ void Controlador::crearYDibujarArbol(){
 		Paciente * p = listaH.extraer();
 		abb1.insertar(p);
 	}
-//abb1.dibujar();
+abb1.dibujar();
 }
 
 void Controlador::muestraPacientesApendicitisEnOrden(){
@@ -222,21 +225,24 @@ void Controlador::muestraPacientesInOrden(){
 	cout << "Inorden del \240rbol:\n";
 	abb1.inordenIzq();
 	abb1.inordenDer();
-	//abb1.inorden();
 }
 void Controlador::buscarPacientesArbol(){
 	//Mostrar paciente con menor número de habitación en Apendicitis
 	cout << "Paciente con Apendicitis cuyo n\243mero de habitaci\242n es el menor" << "\n\t";
-	abb1.minimo(abb1.subArbolIzq())->getPaciente()->mostrar();
+	if (abb1.subArbolIzq()) abb1.minimo(abb1.subArbolIzq())->getPaciente()->mostrar();
+	else cout << "No existen pacientes con apendicitis." << "\n";
 	//Mostrar paciente con mayor número de habitación en Apendicitis
 	cout << "Paciente con Apendicitis cuyo n\243mero de habitaci\242n es el mayor" << "\n\t";
-	abb1.maximo(abb1.subArbolIzq())->getPaciente()->mostrar();
+	if (abb1.subArbolIzq()) abb1.maximo(abb1.subArbolIzq())->getPaciente()->mostrar();
+	else cout << "No existen pacientes con Apendicitis." << "\n";
 	//Mostrar paciente con menor número de habitación en Hernias
 	cout << "Paciente con Hernias cuyo n\243mero de habitaci\242n es el menor" << "\n\t";
-	abb1.minimo(abb1.subArbolDer())->getPaciente()->mostrar();
+	if (abb1.subArbolDer()) abb1.minimo(abb1.subArbolDer())->getPaciente()->mostrar();
+	else cout << "No existen pacientes con Hernias." << "\n";
 	//Mostrar paciente con mayor número de habitación en Hernias
 	cout << "Paciente con Hernias cuyo n\243mero de habitaci\242n es el mayor" << "\n\t";
-	abb1.maximo(abb1.subArbolDer())->getPaciente()->mostrar();
+	if (abb1.subArbolDer()) abb1.maximo(abb1.subArbolDer())->getPaciente()->mostrar();
+	else cout << "No existen pacientes con Hernias." << "\n";
 }
 void Controlador::contarPacientesHabImpar(){
     cout << "N\243mero de pacientes curos n\243meros de habitaci\242n son impares: " << abb1.contarHabImpares() << "\n";    
@@ -248,22 +254,32 @@ void Controlador::mostrarPacientesHoja(){
 }
 
 void Controlador::eliminarPaciente(){
-	
 	int hab;
 	cout << "Indica la habitaci\242n del paciente que quieres eliminar: ";
 	cin >> hab;
 	cout << "\n";
-	//abb1.dibujar();
+	abb1.dibujar();
 	cout << "\265rbol antes de eliminar el nodo " << hab << ".\n";
 	abb1.eliminarPaciente(hab);
-	//abb1.dibujar();
+	abb1.dibujar();
 	cout << "\265rbol tras eliminar el nodo " << hab <<".\n";
 }
 
 void Controlador::borraPacientesArbol(){
-	while(abb1.getTamanno()>1){
-		abb1.eliminarPaciente(1);
+	while(abb1.minimo()->getPaciente()->getHabitacion()<200){
+		IDsA_libres.push_back(abb1.minimo()->getPaciente()->getID());
+		habA_libres.push_back(abb1.minimo()->getPaciente()->getHabitacion());
+		abb1.eliminarPaciente(abb1.minimo()->getPaciente()->getHabitacion());
 	}
+	while(abb1.maximo()->getPaciente()->getHabitacion()>200){
+		IDsH_libres.push_back(abb1.maximo()->getPaciente()->getID());
+		habH_libres.push_back(abb1.maximo()->getPaciente()->getHabitacion());
+		abb1.eliminarPaciente(abb1.maximo()->getPaciente()->getHabitacion());
+	}
+	random_shuffle(IDsA_libres.begin(), IDsA_libres.end());
+	random_shuffle(IDsH_libres.begin(), IDsH_libres.end());
+	random_shuffle(habA_libres.begin(), habA_libres.end());
+	random_shuffle(habH_libres.begin(), habH_libres.end());
 }
 
 Controlador::~Controlador(){

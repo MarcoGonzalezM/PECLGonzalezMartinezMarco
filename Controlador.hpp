@@ -18,6 +18,7 @@ public:
     int pacientesEnListaApendicitis();
     int pacientesEnListaHernias();
 	int pacientesEnArbol();
+	int pacientesEnSistema();
     void genera12Pacientes();
 	void muestraPacientes();
 	void borraPacientesPila();
