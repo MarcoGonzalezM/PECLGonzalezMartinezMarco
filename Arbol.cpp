@@ -1,9 +1,7 @@
 #include "Arbol.hpp"
 
 Arbol::Arbol(){
-	Paciente * p = new Paciente();
-	p->setHabitacion(200);
-	raiz = new NodoArbol(p);
+	raiz = NULL;
 }
 
 Arbol::~Arbol(){

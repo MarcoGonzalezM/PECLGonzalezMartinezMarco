@@ -24,6 +24,10 @@ Controlador::Controlador(){
     random_shuffle(habA_libres.begin(), habA_libres.end());
     random_shuffle(habH_libres.begin(), habH_libres.end());
 	
+	//Insertar paciente ficticio
+	Paciente * p = new Paciente();
+	p->setHabitacion(200);
+	abb1.insertar(p);
 
 
 }
