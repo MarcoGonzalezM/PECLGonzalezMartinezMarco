@@ -28,8 +28,6 @@ Controlador::Controlador(){
 	Paciente * p = new Paciente();
 	p->setHabitacion(200);
 	abb1.insertar(p);
-
-
 }
 
 int Controlador::pacientesEnPila(){
@@ -230,6 +228,17 @@ void Controlador::muestraPacientesInOrden(){
 	abb1.inordenIzq();
 	abb1.inordenDer();
 }
+
+void Controlador::muestraPacientesPreOrden(){
+	cout << "Preorden del \240rbol:\n";
+	abb1.preorden();
+}
+
+void Controlador::muestraPacientesPostOrden(){
+	cout << "Postorden del \240rbol:\n";
+	abb1.postorden();
+}
+
 void Controlador::buscarPacientesArbol(){
 	//Mostrar paciente con menor número de habitación en Apendicitis
 	cout << "Paciente con Apendicitis cuyo n\243mero de habitaci\242n es el menor" << "\n\t";
@@ -264,7 +273,21 @@ void Controlador::eliminarPaciente(){
 	cout << "\n";
 	abb1.dibujar();
 	cout << "\265rbol antes de eliminar el nodo " << hab << ".\n";
+	Paciente * pac = abb1.buscarPaciente(hab);
+	if (pac){
+		if(pac->esHernia()){
+		IDsH_libres.push_back(pac->getID());
+		habH_libres.push_back(pac->getHabitacion());
+		random_shuffle(IDsH_libres.begin(), IDsH_libres.end());
+		random_shuffle(habH_libres.begin(), habH_libres.end());
+		} else {
+		IDsA_libres.push_back(pac->getID());
+		habA_libres.push_back(pac->getHabitacion());
+		random_shuffle(IDsA_libres.begin(), IDsA_libres.end());
+		random_shuffle(habA_libres.begin(), habA_libres.end());
+		}
 	abb1.eliminarPaciente(hab);
+	}
 	abb1.dibujar();
 	cout << "\265rbol tras eliminar el nodo " << hab <<".\n";
 }

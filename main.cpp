@@ -47,7 +47,9 @@ int main(int argc, char** argv){
         cout << "\tU. Eliminar un paciente indicado por su n\243mero de habitaci\242n (que se pide desde consola) y mostrar "
                 "el \240rbol "
                 "resultante tras la eliminaci\242n de dicho paciente.\n";
-        cout << "\tS. Salir.\n\n";
+        cout << "\tV. Mostrar los datos de todos los pacientes recorriendo el \240rbol en preorden.\n";
+        cout << "\tW. Mostrar los datos de todos los pacientes recorriendo el \240rbol en postorden.\n";
+		cout << "\tS. Salir.\n\n";
         cout << "\tIndique la opci\242n deseada: ";
         cin >> opcion;
         opcion = toupper(opcion);
@@ -114,6 +116,12 @@ int main(int argc, char** argv){
         case 'U':
             controlador.eliminarPaciente();
             break;
+		case 'V':
+			controlador.muestraPacientesPreOrden();
+			break;
+		case 'W':
+			controlador.muestraPacientesPostOrden();
+			break;
         case 'S':
             cout << "Saliendo del programa...\n";
             break;

@@ -36,6 +36,8 @@ public:
     void muestraPacientesApendicitisEnOrden();
     void muestraPacientesHerniasEnOrden();
     void muestraPacientesInOrden();
+	void muestraPacientesPreOrden();
+	void muestraPacientesPostOrden();
     void buscarPacientesArbol();
     void contarPacientesHabImpar();
     void mostrarPacientesHoja();

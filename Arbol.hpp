@@ -11,6 +11,8 @@ public:
 	void inordenIzq();
 	void inordenDer();
 	void inorden();
+	void preorden();
+	void postorden();
 	void dibujar();
 	int contarHabImpares();
 	pnodoAbb subArbolIzq();
@@ -21,6 +23,7 @@ public:
 	pnodoAbb maximo(pnodoAbb);
 	void mostrarHojas();
 	void eliminarPaciente(int hab);
+	Paciente * buscarPaciente(int hab);
 	~Arbol();
 	
 private:
@@ -29,10 +32,12 @@ private:
 	pnodoAbb insertar(pnodoAbb, Paciente *);
 	void preorden(pnodoAbb);
 	void inorden(pnodoAbb);
+	void postorden(pnodoAbb);
 	int contarHabImpares(pnodoAbb);
 	int altura(pnodoAbb);
 	void mostrarHojas(pnodoAbb);
 	pnodoAbb eliminarPaciente(pnodoAbb, int);
+	Paciente * buscarPaciente(pnodoAbb, int);
 	pnodoAbb eliminarNodo(pnodoAbb);
 	void dibujarNodo(vector<string>& output, vector<string> linkAbove, pnodoAbb nodo, int nivel, int minPos, char linkChar);
 };

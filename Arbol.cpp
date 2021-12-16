@@ -47,6 +47,10 @@ void Arbol::inordenDer(){
     inorden(raiz->der);
 }
 
+void Arbol::preorden(){
+	preorden(raiz);
+}
+
 void Arbol::preorden(pnodoAbb nodo){
     if (nodo){
         nodo->valor->mostrar();
@@ -64,6 +68,18 @@ void Arbol::inorden(pnodoAbb nodo){
         inorden(nodo->izq);
         nodo->valor->mostrar();
         inorden(nodo->der);
+    }
+}
+
+void Arbol::postorden(){
+	postorden(raiz);
+}
+
+void Arbol::postorden(pnodoAbb nodo){
+    if (nodo){
+        postorden(nodo->izq);
+        postorden(nodo->der);
+		nodo->valor->mostrar();
     }
 }
 
@@ -132,6 +148,26 @@ void Arbol::mostrarHojas(pnodoAbb nodo){
 	} else {
 		mostrarHojas(nodo->izq);
 		mostrarHojas(nodo->der);
+	}
+}
+
+Paciente *  Arbol::buscarPaciente(int hab){
+	return buscarPaciente(raiz,hab);
+}
+
+Paciente * Arbol::buscarPaciente(pnodoAbb nodo,int hab){
+	if(nodo){
+			if (hab==nodo->valor->getHabitacion()){
+			return nodo->valor;
+		} else {
+			if (hab<nodo->valor->getHabitacion()){
+				return buscarPaciente(nodo->izq, hab);
+			} else {
+				return buscarPaciente(nodo->der, hab);
+			}
+		}
+	} else {
+		return NULL;
 	}
 }
 
