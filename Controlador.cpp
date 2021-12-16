@@ -67,7 +67,7 @@ void Controlador::genera12Pacientes(){
 		}
 	}
 	else{
-		cout << "El n\243mero de pacientes en pila est\240 al m\240ximo (48)." << endl;
+		cout << "El n\243mero de pacientes en el sistema est\240 al m\240ximo (48)." << endl;
 	}
 }
 
@@ -258,7 +258,7 @@ void Controlador::buscarPacientesArbol(){
 	else cout << "No existen pacientes con Hernias." << "\n";
 }
 void Controlador::contarPacientesHabImpar(){
-    cout << "N\243mero de pacientes curos n\243meros de habitaci\242n son impares: " << abb1.contarHabImpares() << "\n";    
+    cout << "N\243mero de pacientes cuyos n\243meros de habitaci\242n son impares: " << abb1.contarHabImpares() << "\n";    
 }
 
 void Controlador::mostrarPacientesHoja(){

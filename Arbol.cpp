@@ -60,7 +60,7 @@ void Arbol::preorden(pnodoAbb nodo){
 }
 
 void Arbol::inorden(){
-    inorden(raiz);
+	inorden(raiz);
 }
 
 void Arbol::inorden(pnodoAbb nodo){
