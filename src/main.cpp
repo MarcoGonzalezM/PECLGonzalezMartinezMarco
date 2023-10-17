@@ -18,7 +18,7 @@ int main(int argc, char** argv){
              << " \n\tPacientes en las listas:\n \t\tQuir\242fano Apendicitis-> "
              << controlador.pacientesEnListaApendicitis() << "\tQuir\242fano hernias-> "
              << controlador.pacientesEnListaHernias() << "\n\tPacientes en el \240rbol -> "
-             << /*controlador.pacientesEnArbol()*/ 0 << "\n";
+             << controlador.pacientesEnArbol()-1 << "\n";//-1 por que se ignora el paciente ficticio
         cout << "\t----------------------------------------------------------------------\n\n";
         cout << "\tA. Generar 12 pacientes de forma aleatoria y almacenarlos en la Pila.\n";
         cout << "\tB. Consultar todos los pacientes generados en la Pila (pendientes de entrar en las salas).\n";
@@ -47,7 +47,9 @@ int main(int argc, char** argv){
         cout << "\tU. Eliminar un paciente indicado por su n\243mero de habitaci\242n (que se pide desde consola) y mostrar "
                 "el \240rbol "
                 "resultante tras la eliminaci\242n de dicho paciente.\n";
-        cout << "\tS. Salir.\n\n";
+        cout << "\tV. Mostrar los datos de todos los pacientes recorriendo el \240rbol en preorden.\n";
+        cout << "\tW. Mostrar los datos de todos los pacientes recorriendo el \240rbol en postorden.\n";
+		cout << "\tS. Salir.\n\n";
         cout << "\tIndique la opci\242n deseada: ";
         cin >> opcion;
         opcion = toupper(opcion);
@@ -91,29 +93,35 @@ int main(int argc, char** argv){
             controlador.reiniciar();
             break;
         case 'M':
-            // controlador.crearYDibujarArbol();
+            controlador.crearYDibujarArbol();
             break;
         case 'N':
-            // controlador.muestraPacientesApendicitisEnOrden();
+            controlador.muestraPacientesApendicitisEnOrden();
             break;
         case 'O':
-            // controlador.muestraPacientesHerniasEnOrden();
+            controlador.muestraPacientesHerniasEnOrden();
             break;
         case 'P':
-            // controlador.muestraPacientesInOrden();
+            controlador.muestraPacientesInOrden();
             break;
         case 'Q':
-            // controlador.buscarPacientesArbol();
+            controlador.buscarPacientesArbol();
             break;
         case 'R':
-            // controlador.contarPacientesHabImpar();
+            controlador.contarPacientesHabImpar();
             break;
         case 'T':
-            // controlador.mostrarPacientesHoja();
+            controlador.mostrarPacientesHoja();
             break;
         case 'U':
-            // controlador.eliminarPaciente();
+            controlador.eliminarPaciente();
             break;
+		case 'V':
+			controlador.muestraPacientesPreOrden();
+			break;
+		case 'W':
+			controlador.muestraPacientesPostOrden();
+			break;
         case 'S':
             cout << "Saliendo del programa...\n";
             break;

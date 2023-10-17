@@ -12,6 +12,7 @@ public:
 	void mostrar();
     void setID(int id);
     void setHabitacion(int hab);
+    int getHabitacion();
 	~Paciente();
 	
 private:

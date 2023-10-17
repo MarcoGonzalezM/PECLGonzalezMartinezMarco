@@ -1,16 +1,16 @@
 #include "Paciente.hpp"
 
 Paciente::Paciente(){
-    ID=0;
-    habitacion=0;
+	ID=0;
+	habitacion=0;
 	enfermedad = (rand() % 2);
 	this->generarDNI();
 }
 
-bool Paciente::esHernia()
-{
+bool Paciente::esHernia(){
 	return this->enfermedad; //1 es hernia
 }
+
 void Paciente::mostrar(){
 	cout << "\t El paciente cuyo DNI es " << DNI << " tiene " << (enfermedad ? "hernia" : "apendicitis");
     if(ID>0){
@@ -44,7 +44,11 @@ void Paciente::setHabitacion(int hab){
 
 int Paciente::getID(){
     return ID;    
-    }
+}
+
+int Paciente::getHabitacion(){
+    return habitacion;
+}
 
 Paciente::~Paciente()
 {
